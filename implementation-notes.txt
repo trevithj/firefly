@@ -1,0 +1,5 @@
+# Dev notes
+
+## First version
+Basic setup of the app. First thing, using  the `npm bootstrap` package failed to compile due to missing 'optional' packages. If time allowed, I'd look at the `webpack` config to see what was happening, but for now opted to use the CDN versions of the full packages.
+
