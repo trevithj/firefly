@@ -1,6 +1,7 @@
 import React from "react";
-import { useStore } from "./store";
-import logo from "./assets/ff_logo.svg";
+import LeftPanel from "./leftPanel";
+import MainPanel from "./mainPanel";
+import { Col, Row } from "./styled";
 
 const appStyle = {
   fontFamily: "Open Sans",
@@ -8,28 +9,17 @@ const appStyle = {
   padding: 0
 };
 
-const appLogo = {
-  width: "5vw"
-};
-
 const App = () => {
-  const [state] = useStore();
-
-  console.log(state);
-
   return (
     <div className="App container" style={appStyle}>
-      <div className="row">
-        <div className="col-sm-2">
-          <div>
-            <img src={logo} style={appLogo} alt="logo" />
-            TODO: add left panel
-          </div>
-        </div>
-        <div className="col-sm-10">
-          <div>TODO: add main panel</div>
-        </div>
-      </div>
+      <Row>
+        <Col width="3">
+          <LeftPanel />
+        </Col>
+        <Col width="9">
+          <MainPanel />
+        </Col>
+      </Row>
     </div>
   );
 };
