@@ -6,13 +6,14 @@ import { Col, Row } from "./styled";
 const appStyle = {
   fontFamily: "Open Sans",
   margin: 0,
-  padding: 0
+  padding: 0,
+  width: "100%"
 };
 
 const App = () => {
   return (
-    <div className="App container" style={appStyle}>
-      <Row>
+    <div className="container" style={appStyle}>
+      <Row style={{ width: "100%" }}>
         <Col width="3">
           <LeftPanel />
         </Col>

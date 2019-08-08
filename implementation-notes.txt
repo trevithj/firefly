@@ -5,3 +5,6 @@ Basic setup of the app. First thing, using  the `npm bootstrap` package failed t
 
 ## Version 2
 Split the main panels out into their own components. Start a quick mock-up of the menu buttons.
+
+## Version 3
+Work on a mockup of the main panel. Less concerned here with styling, and more about getting basic functionality working. Styling even with Bootstrap is a bit of a time-suck, and can always be added in later.

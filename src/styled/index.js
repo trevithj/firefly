@@ -2,8 +2,8 @@ import React from "react";
 
 const compactStyle = { margin: 0, padding: 0 };
 
-export const Col = ({ children, width = 6 }) => (
-  <div style={compactStyle} className={`col-sm-${width}`}>
+export const Col = ({ style = {}, children, width = 6 }) => (
+  <div style={{ ...compactStyle, ...style }} className={`col-md-${width}`}>
     {children}
   </div>
 );
