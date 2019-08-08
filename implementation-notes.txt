@@ -8,3 +8,6 @@ Split the main panels out into their own components. Start a quick mock-up of th
 
 ## Version 3
 Work on a mockup of the main panel. Less concerned here with styling, and more about getting basic functionality working. Styling even with Bootstrap is a bit of a time-suck, and can always be added in later.
+
+## Version 4
+Wire in the menu buttons to allow view switching. Refactored folders and split out main sub-components to support further dev. So top 4 menu items and the welcome header's agree/dismiss options now work.

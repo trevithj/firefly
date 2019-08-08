@@ -11,19 +11,19 @@ const appLogo = {
 
 const btnClass = "btn btn-primary text-left";
 
-const Button = ({ active = false, title }) => {
+const Button = ({ active = false, title, handleClick }) => {
   const theClass = active ? `${btnClass} active` : btnClass;
   return (
-    <button type="button" className={theClass}>
+    <button type="button" className={theClass} onClick={handleClick}>
       {title}
     </button>
   );
 };
 
 const LeftPanel = () => {
-  const [state] = useStore();
-
-  console.log(state);
+  const [state, dispatch] = useStore();
+  const getHandler = view => () => dispatch({ view });
+  // console.log(state);
 
   return (
     <div>
@@ -33,10 +33,26 @@ const LeftPanel = () => {
       </Row>
       <Row>
         <div className="btn-group-vertical" style={{ width: "100%" }}>
-          <Button title="Overview" active />
-          <Button title="Animals" />
-          <Button title="Food" />
-          <Button title="Music" />
+          <Button
+            title="Overview"
+            active={state.view === "overview"}
+            handleClick={getHandler("overview")}
+          />
+          <Button
+            title="Animals"
+            active={state.view === "animals"}
+            handleClick={getHandler("animals")}
+          />
+          <Button
+            title="Food"
+            active={state.view === "food"}
+            handleClick={getHandler("food")}
+          />
+          <Button
+            title="Music"
+            active={state.view === "music"}
+            handleClick={getHandler("music")}
+          />
         </div>
       </Row>
       <hr />
