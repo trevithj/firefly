@@ -3,7 +3,8 @@
 import React from 'react';
 import { s2o } from './helpers';
 
-const Main = () => {
+const Main = ({ name }) => {
+  const na = name.split(' ');
   return (
     <section
       className='section gradient_1 section--hero fp-section'
@@ -26,7 +27,7 @@ const Main = () => {
         </div>
         <div className='section__contents'>
           <h1 className='hero_heading--primary'>
-            Kia Ora Hannah,
+            Kia Ora {na[0]},
             <br />
             welcome to EquipMe.
           </h1>

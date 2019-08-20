@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useState } from 'react';
 import './css/animate.css';
 import './css/normalize.css';
 // import './css/styles.css'; //need to install fonts for this to work
@@ -16,6 +16,11 @@ import Footer from './Footer';
 import { s2o } from './helpers';
 
 const Main = () => {
+  const [name, setName] = useState('Hannah McQueen');
+  const doUpdate = e => {
+    console.log(e.target.value);
+    setName(e.target.value);
+  };
   return (
     <div
       data-features='dashboard'
@@ -48,7 +53,7 @@ const Main = () => {
                 <MobileMenuSocial />
               </li>
               <li className='nav_section'>
-                <NavSectionAvatar />
+                <NavSectionAvatar name={name} />
               </li>
             </div>
           </div>
@@ -59,7 +64,8 @@ const Main = () => {
         className='fullpage-wrapper'
         style={s2o('height: 100%; position: relative;')}
       >
-        <HeroSection />
+        <HeroSection name={name} />
+        <input type='text' onChange={doUpdate} value={name} />
         <Footer />
       </main>
     </div>

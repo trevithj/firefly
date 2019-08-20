@@ -81,21 +81,25 @@ export const MobileMenuSocial = () => (
   </ul>
 );
 
-export const NavSectionAvatar = () => (
-  <ul className='nav_section_menu'>
-    <li className='nav_section_item nav_section_item--avatar'>
-      <a href='#' className='nav__avatar'>
-        <span className='nav__avatar_text'>HM</span>
-      </a>
-    </li>
-    <li className='nav_section_item nav_section_item--menu'>
-      <button type='button' className='nav__menu_btn'>
-        <div className='hamburger hamburger--squeeze js-hamburger'>
-          <div className='hamburger-box'>
-            <div className='hamburger-inner' />
+export const NavSectionAvatar = ({ name = '' }) => {
+  const na = name.split(' ').map(n => n.substring(0, 1).toUpperCase());
+
+  return (
+    <ul className='nav_section_menu'>
+      <li className='nav_section_item nav_section_item--avatar'>
+        <a href='#' className='nav__avatar'>
+          <span className='nav__avatar_text'>{na.join('')}</span>
+        </a>
+      </li>
+      <li className='nav_section_item nav_section_item--menu'>
+        <button type='button' className='nav__menu_btn'>
+          <div className='hamburger hamburger--squeeze js-hamburger'>
+            <div className='hamburger-box'>
+              <div className='hamburger-inner' />
+            </div>
           </div>
-        </div>
-      </button>
-    </li>
-  </ul>
-);
+        </button>
+      </li>
+    </ul>
+  );
+};
