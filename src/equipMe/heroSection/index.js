@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { s2o } from './helpers';
+import { s2o } from '../helpers';
 
-const Main = ({ name }) => {
+const HeroSection = ({ name }) => {
   const na = name.split(' ');
   return (
     <section
@@ -42,4 +42,4 @@ const Main = ({ name }) => {
   );
 };
 
-export default Main;
+export default HeroSection;

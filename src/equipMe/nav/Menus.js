@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { useStore } from '../../store';
 
 export const NavSectionMenu = () => (
   <ul className='nav_section_menu'>
@@ -47,12 +48,12 @@ export const MobileMenuMain = () => (
       </a>
     </li>
     <li className='nav_section_item nav_section_item--mobile'>
-      <a className='nav__link' href='#'>
+      <a className='nav__link' href='#TBD'>
         My Profile
       </a>
     </li>
     <li className='nav_section_item nav_section_item--mobile'>
-      <a className='nav__link' href='#'>
+      <a className='nav__link' href='#TBD'>
         Sign Out
       </a>
     </li>
@@ -81,7 +82,9 @@ export const MobileMenuSocial = () => (
   </ul>
 );
 
-export const NavSectionAvatar = ({ name = '' }) => {
+export const NavSectionAvatar = () => {
+  const [state] = useStore();
+  const name = state.name || '? ?';
   const na = name.split(' ').map(n => n.substring(0, 1).toUpperCase());
 
   return (
